@@ -8,7 +8,7 @@ VAGRANTFILE_API_VERSION = "2"
 $guest_name = "fusion01"
 $shared_path = "~/Source"
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|	
 	# Add guest to host hosts file
 	config.hostmanager.enabled = true
 	config.hostmanager.manage_host = true
@@ -27,6 +27,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.synced_folder $shared_path, "/share", type: "nfs"
 	
 	# Provisioner
-#	config.vm.provision "shell", path: "provision.sh"
-end
+	config.vm.provision "shell", path: "provision.sh"
 	
+end
