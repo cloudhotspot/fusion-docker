@@ -18,12 +18,14 @@ This recipe creates a Vagrant environment that sets up a Docker VM with NFS file
 
 ## Prerequisites
 
-* Virtualbox or VMWare Fusion 5+
-* [Vagrant 1.6+](http://www.vagrantup.com/downloads.html)
+* [Brew](http://brew.sh)
+* Docker client - `brew install docker`
+* Virtualbox or VMWare Fusion 5+ - 'brew install Caskroom/cask/virtualbox'
+* [Vagrant 1.6+](http://www.vagrantup.com/downloads.html) - 'brew install Caskroom/cask/vagrant'
 * [Vagrant Hostmanager Plugin](https://github.com/smdahlen/vagrant-hostmanager)
 * [Vagrant VMWare Fusion Provider](http://www.vagrantup.com/vmware#buy-now) (if using VMWare Fusion)
-* To ease the Vagrant configuration of NFS on your OS X machine, you should also follow the steps outlined in the **Root Privilige Instructions** section of the [Vagrant NFS documentation](http://docs.vagrantup.com/v2/synced-folders/nfs.html)    
-
+* To ease the Vagrant configuration of NFS on your OS X machine, you should also follow the steps outlined in the **Root Privilige Instructions** section of the [Vagrant NFS documentation](http://docs.vagrantup.com/v2/synced-folders/nfs.html)
+ 
 ## Installation
 
 By default your Docker machine is called `fusion01`.  You can change this via the `$guest_name` variable in the `Vagrantfile`.
