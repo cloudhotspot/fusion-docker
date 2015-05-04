@@ -26,7 +26,7 @@ This recipe creates a Vagrant environment that sets up a Docker VM with NFS file
 
 ## Installation
 
-Note: by default your Docker machine is called fusion01
+By default your Docker machine is called `fusion01`.  You can change this via the `$guest_name` variable in the `Vagrantfile`.
 
     My-Awesome-MacBook-Pro:~ god$ vagrant up
     Bringing machine 'default' up with 'vmware_fusion' provider...
@@ -61,9 +61,9 @@ Note: by default your Docker machine is called fusion01
 
 ## Shared Folders
 
-By default a folder called /share is mounted in your Docker VM that is mapped to ~/Source via NFS.
+By default a folder called `/share` is mounted in your Docker VM that is mapped to `~/Source` on your OS X machine via NFS.
 
-You can update this configuration my modifying the Vagrantfile.
+You can update this configuration my modifying the `$shared_host_path` and `$shared_guest_path` variables in the `Vagrantfile`.
 
     My-Awesome-MacBook-Pro:~ god$ vagrant ssh
     Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.13.0-24-generic x86_64)
@@ -72,6 +72,3 @@ You can update this configuration my modifying the Vagrantfile.
     Last login: Mon May  4 02:23:16 2015 from 192.168.174.1
     vagrant@fusion01:~$ ls -l /share
     drwxr-xr-x 11 501 dialout     374 Oct 25  2014 activator-akka-spray
-    
-    
-
