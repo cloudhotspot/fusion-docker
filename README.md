@@ -10,9 +10,9 @@ Although these tools are great for getting up and running quickly, if you want t
 
 In a Linux development environment, you can run Docker within your development environment and it is simple to use Docker volumes to share files.  In OS X though, it's harder because we need a guest virtual machine with a Linux kernel to run the Docker runtime.  
 
-To share files from your OS X development environment with your containers, this means you need to set up sharing with your Docker host VM.  With boot2docker and Docker Machine, VM sharing is only currently supported with Virtualbox, using it's terribly slow file sharing features.
+To share files from your OS X development environment with your containers, this means you need to set up file sharing with your Docker host VM.  With boot2docker and Docker Machine, VM file sharing is only currently supported with Virtualbox, using it's terribly slow file sharing features.
 
-A better alternative is to use VMWare Fusion, which offers much better file sharing performance using its HGFS file system.  However I have personally found that their can be some synchronisation issues with this approach, therefore the safest approach is to use NFS sharing.
+A better alternative is to use VMWare Fusion, which offers much better file sharing performance using its HGFS file system.  However I have personally found that their can be some synchronisation issues with this approach (especially if you attempt to compile source code within your guest VM), therefore the safest approach is to use NFS sharing.
 
 This recipe creates a Vagrant environment that sets up a Docker VM with NFS file sharing configured in Virtualbox or VMWare Fusion. 
 
@@ -74,3 +74,7 @@ You can update this configuration my modifying the `$shared_host_path` and `$sha
     Last login: Mon May  4 02:23:16 2015 from 192.168.174.1
     vagrant@fusion01:~$ ls -l /share
     drwxr-xr-x 11 501 dialout     374 Oct 25  2014 activator-akka-spray
+    
+## Limitations
+
+Virtualbox requires the explicit addition of a host-only network adapter with a static IP address.  This is handled for you automatically in the `Vagrantfile`.
