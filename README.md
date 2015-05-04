@@ -32,11 +32,19 @@ This recipe creates a Vagrant environment that sets up a Docker VM with NFS file
 
 By default your Docker machine is called `fusion01`.  You can change this via the `$guest_name` variable in the `Vagrantfile`.
 
+First run `vagrant up`:
+
     My-Awesome-MacBook-Pro:~ god$ vagrant up
     Bringing machine 'default' up with 'vmware_fusion' provider...
     ...
     ...
+    
+Next you will need to set a DOCKER_HOST environment variable as demonstrated below.  Note this uses the insecure Docker daemon port (this is a development environment after all!)
+
     My-Awesome-MacBook-Pro:~ god$ export DOCKER_HOST=tcp://fusion01:2375
+
+That's it - you're ready to go!
+    
     My-Awesome-MacBook-Pro:~ god$ docker run hello-world
     Unable to find image 'hello-world:latest' locally
     latest: Pulling from hello-world
