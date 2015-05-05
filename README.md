@@ -2,11 +2,11 @@
 
 A Vagrant virtual machine for running a Docker development environment on Mac OS X.
 
-The virtual machine is based upon the [phusion/ubuntu-14.04-amd64](https://vagrantcloud.com/phusion/boxes/ubuntu-14.04-amd64) Vagrant box.
+The virtual machine is based upon the <a href="https://vagrantcloud.com/phusion/boxes/ubuntu-14.04-amd64" target="_blank">phusion/ubuntu-14.04-amd64</a> Vagrant box.
 
 ## Introduction
 
-Running Docker on OS X typically means running [boot2docker](http://boot2docker.io), or more recently [Docker machine](https://docs.docker.com/machine/).
+Running Docker on OS X typically means running <a href="http://boot2docker.io" target="_blank">boot2docker</a>, or more recently <a href="https://docs.docker.com/machine/" target="_blank">Docker machine</a>.
 
 Although these tools are great for getting up and running quickly, if you want to run a Docker development environment, you need to consider how you can share files from your development workspace with your Docker containers.
 
@@ -20,14 +20,14 @@ This recipe creates a Vagrant environment that sets up a Docker VM with NFS file
 
 ## Prerequisites
 
-* [Brew](http://brew.sh)
+* <a href="http://brew.sh" target="_blank">Brew</a>
 * Docker client - `brew install docker`
 * Virtualbox or VMWare Fusion 5+ - `brew install Caskroom/cask/virtualbox`
-* [Vagrant 1.6+](http://www.vagrantup.com/downloads.html) - `brew install Caskroom/cask/vagrant`
-* [Vagrant Hostmanager Plugin](https://github.com/smdahlen/vagrant-hostmanager)
-* [Vagrant VMWare Fusion Provider](http://www.vagrantup.com/vmware#buy-now) (if using VMWare Fusion)
-* To ease the Vagrant configuration of NFS on your OS X machine, you should also follow the steps outlined in the **Root Privilege Instructions** section of the [Vagrant NFS documentation](http://docs.vagrantup.com/v2/synced-folders/nfs.html)
- 
+* <a href="http://www.vagrantup.com/downloads.html" target="_blank">Vagrant 1.6+</a> - `brew install Caskroom/cask/vagrant`
+* <a href="https://github.com/smdahlen/vagrant-hostmanager" target="_blank">Vagrant Hostmanager Plugin</a>
+* <a href="http://www.vagrantup.com/vmware#buy-now" target="_blank">Vagrant VMWare Fusion Provider Plugin</a> (if using VMWare Fusion)
+* To ease the Vagrant configuration of NFS on your OS X machine, you should also follow the steps outlined in the **Root Privilege Instructions** section of the <a href="http://docs.vagrantup.com/v2/synced-folders/nfs.html" target="_blank">Vagrant NFS documentation</a>
+
 ## Installation
 
 By default your Docker machine is called `fusion01`.  You can change this via the `$guest_name` variable in the `Vagrantfile`.
