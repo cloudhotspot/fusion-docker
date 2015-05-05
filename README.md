@@ -26,7 +26,7 @@ This recipe creates a Vagrant environment that sets up a Docker VM with NFS file
 * [Vagrant 1.6+](http://www.vagrantup.com/downloads.html) - `brew install Caskroom/cask/vagrant`
 * [Vagrant Hostmanager Plugin](https://github.com/smdahlen/vagrant-hostmanager)
 * [Vagrant VMWare Fusion Provider](http://www.vagrantup.com/vmware#buy-now) (if using VMWare Fusion)
-* To ease the Vagrant configuration of NFS on your OS X machine, you should also follow the steps outlined in the **Root Privilige Instructions** section of the [Vagrant NFS documentation](http://docs.vagrantup.com/v2/synced-folders/nfs.html)
+* To ease the Vagrant configuration of NFS on your OS X machine, you should also follow the steps outlined in the **Root Privilege Instructions** section of the [Vagrant NFS documentation](http://docs.vagrantup.com/v2/synced-folders/nfs.html)
  
 ## Installation
 
@@ -75,7 +75,7 @@ That's it - you're ready to go!
 
 By default a folder called `/share` is mounted in your Docker VM that is mapped to `~/Source` on your OS X machine via NFS.
 
-You can update this configuration my modifying the `$shared_host_path` and `$shared_guest_path` variables in the `Vagrantfile`.
+You can update this configuration by modifying the `$shared_host_path` and `$shared_guest_path` variables in the `Vagrantfile`.
 
     My-Awesome-MacBook-Pro:~ god$ vagrant ssh
     Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.13.0-24-generic x86_64)
