@@ -5,8 +5,8 @@
 VAGRANTFILE_API_VERSION = "2"
 
 # Variables
-$memory = 2048
-$cpus = 2
+$memory = 4096
+$cpus = 4
 $guest_name = "fusion01"
 $virtualbox_ip = "192.168.50.11"
 $shared_host_path = "~/Source"
@@ -19,7 +19,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.manage_host = true
   
   # Box
-  config.vm.box = "phusion/ubuntu-14.04-amd64"
+  config.vm.box = "cloudhotspot/docker"
+  config.vm.define $guest_name
+
+  # Disable new SSH key generation - appears to solve similar issue to https://github.com/test-kitchen/kitchen-vagrant/issues/130
+  config.ssh.insert_key = false
 
   # VMWare Fusion settings
   config.vm.provider "vmware_fusion" do |v|
@@ -37,8 +41,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Common configuration
   config.vm.hostname = $guest_name
-  config.vm.synced_folder $shared_host_path, $shared_guest_path, type: "nfs"
+  config.vm.synced_folder $shared_host_path, $shared_guest_path #, type: "nfs"
 
   # Provisioner
-  config.vm.provision "shell", path: "provision.sh"
+  # config.vm.provision "shell", path: "provision.sh"
 end
